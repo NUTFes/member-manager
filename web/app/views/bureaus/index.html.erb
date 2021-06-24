@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Bureaus</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @bureaus.each do |bureau| %>
+      <tr>
+        <td><%= bureau.name %></td>
+        <td><%= link_to 'Show', bureau %></td>
+        <td><%= link_to 'Edit', edit_bureau_path(bureau) %></td>
+        <td><%= link_to 'Destroy', bureau, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Bureau', new_bureau_path %>
